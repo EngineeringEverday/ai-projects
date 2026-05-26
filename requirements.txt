@@ -1,0 +1,4 @@
+streamlit>=1.30
+# Stdlib-only otherwise. Optional LLM providers (toggle via USE_REAL_LLM=true):
+# openai>=1.0
+# anthropic>=0.20
