@@ -1,8 +1,26 @@
 # Sentinel — Merchant Risk Scoring
 
-Production-style merchant risk scoring system for an Indian payments aggregator (Paytm / Razorpay / PhonePe class). Calibrated ML scores + deterministic regulatory rules, served by FastAPI, surfaced through a React + TypeScript console.
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-real--time%20scoring-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-TypeScript-61DAFB?logo=react&logoColor=0B1020)
+![XGBoost](https://img.shields.io/badge/XGBoost-SHAP%20explainability-FF6F00)
+![Docker](https://img.shields.io/badge/Docker-compose%20up-2496ED?logo=docker&logoColor=white)
+
+Portfolio-grade merchant risk platform for an Indian payments aggregator in the Paytm / Razorpay / PhonePe class. It combines synthetic payments-risk data engineering, XGBoost model training, SHAP explainability, deterministic compliance overrides, a real-time FastAPI scoring service, and a React + TypeScript risk-ops dashboard.
+
+Built to demonstrate senior PM and ML product judgment: the system turns manual, rule-based merchant review into an explainable risk decisioning workflow for high-volume transaction approval and onboarding.
 
 > **Risk vs. churn.** The headline label here is **risk** — the probability of financial loss to the platform from chargebacks, fraud, or regulatory/compliance violations. Churn propensity is a secondary, exploratory model shipped alongside, not the primary decision signal.
+
+---
+
+## Portfolio Highlights
+
+- **End-to-end ML product** — 50K-row synthetic merchant dataset, feature engineering, XGBoost risk/churn models, Optuna tuning hooks, MLflow logging hooks, model artifacts, and model card.
+- **Explainable real-time API** — `/api/score` returns a 0–100 risk score, tier, recommended action, churn probability, top SHAP drivers, and any business-rule overrides.
+- **Risk-ops dashboard** — merchant lookup, Merchant 360, portfolio risk monitoring, SHAP/model explainability, impact metrics, and simulated score history.
+- **Compliance-aware rules layer** — deterministic overrides for prohibited MCCs, high dispute rates, weak KYB, and new-merchant risk premiums, with every override logged to SQLite.
+- **Runnable portfolio repo** — `docker-compose up --build` starts the FastAPI backend and React/Nginx frontend with generated demo data and quick model artifacts.
 
 ---
 
