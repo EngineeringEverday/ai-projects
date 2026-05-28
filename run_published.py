@@ -2,8 +2,8 @@
 Published-site launcher for PayCommander.
 
 The pplx.app runtime serves backend ports behind a path prefix such as
-`/port/8501/`. Streamlit needs that prefix as its base URL path so its
-JavaScript, static assets, and websocket endpoints resolve correctly.
+`/port/8501/`. The proxy strips that prefix before the request reaches
+Streamlit, so Streamlit should still serve from its normal root path.
 """
 
 from __future__ import annotations
@@ -50,8 +50,6 @@ def main() -> int:
             "0.0.0.0",
             "--server.port",
             "8501",
-            "--server.baseUrlPath",
-            "port/8501",
             "--server.headless",
             "true",
             "--server.enableCORS",
