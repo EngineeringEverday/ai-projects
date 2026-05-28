@@ -9,6 +9,7 @@ Run from repo root:
 
 from __future__ import annotations
 
+import html
 import json
 import os
 import sqlite3
@@ -368,7 +369,7 @@ with left:
         st.info("Click a preset pill above or type a question.")
     for turn in reversed(st.session_state.chat[-12:]):
         if turn["role"] == "user":
-            st.markdown(f"<div class='user-bubble'>🧑 {turn['msg']}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='user-bubble'>🧑 {html.escape(turn['msg'])}</div>", unsafe_allow_html=True)
         else:
             if turn.get("blocked"):
                 st.markdown(f"<div class='risk-banner'>{turn['msg']}</div>", unsafe_allow_html=True)
