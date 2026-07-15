@@ -1,6 +1,6 @@
 # Fintech AI Product Suite
 
-Four portfolio-grade products spanning contract compliance, merchant risk, payment analytics, and settlement operations. The suite demonstrates how an AI product manager can move from a business problem to a working product, measurable decision logic, explainability, operational safeguards, and an interview-ready product narrative.
+Six portfolio-grade products spanning contract compliance, merchant operations, risk, payment analytics, network intelligence, and settlement operations. The suite demonstrates how an AI product manager can move from a business problem to a working product, measurable decision logic, explainability, operational safeguards, and an interview-ready product narrative.
 
 [![Monorepo CI](https://github.com/EngineeringEverday/fintech-ai-product-suite/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineeringEverday/fintech-ai-product-suite/actions/workflows/ci.yml)
 
@@ -12,8 +12,10 @@ Four portfolio-grade products spanning contract compliance, merchant risk, payme
 | **Sentinel** | Payments platforms need explainable merchant-risk decisions without overwhelming manual-review teams. | XGBoost risk scoring, SHAP explanations, deterministic compliance overrides, FastAPI, and a React risk-operations console. | [Open demo](https://merchant-risk-scoring.vercel.app) | [`merchant-risk-scoring/`](merchant-risk-scoring/) |
 | **PayCommander** | Payment analysts lose time moving between warehouses, dashboards, and investigation tools. | Six-agent deterministic-first analytics pipeline with routing, validation, audit logging, and an observer portal. | [Open demo](https://paycommander.vercel.app) | [`paycommander/`](paycommander/) |
 | **SettleIQ** | Settlement teams investigate payout status, reserves, chargebacks, and rail failures across siloed systems. | MCP-style skill routing, seven settlement domains, safety gates, and a reproducible synthetic operations environment. | [Open demo](https://settleiq.vercel.app) | [`settleiq/`](settleiq/) |
+| **MerchVault** | Payments operations teams need one place to review merchant compliance, risk, documents, and support history. | Next.js merchant-intelligence console covering KYC, UBO screening, risk tiering, audit trails, and communications. | [Open demo](https://merchvault-snowy.vercel.app) | [`merchvault/`](merchvault/) |
+| **GraphLens / OpenCMS Payments** | Analysts need to understand complex financial relationships in CMS Open Payments data. | Svelte, FastAPI, and graph analytics for temporal networks, communities, anomalies, and interactive investigation. | [Open demo](https://open-cms-payments.vercel.app) | [`open-cms-payments/`](open-cms-payments/) |
 
-All four public portfolio endpoints are served through Vercel. The browser demos use deterministic or static fallbacks so they remain recruiter-friendly without credentials or paid model calls. The repositories include the fuller local implementations where applicable.
+All six public portfolio endpoints are served through Vercel. The browser demos use deterministic or static fallbacks where applicable so they remain recruiter-friendly without credentials or paid model calls. The repository includes the fuller local implementations.
 
 ## How the suite fits together
 
@@ -31,7 +33,7 @@ flowchart LR
     G --> O[Operational observability]
 ```
 
-The products are independent applications, but together they cover a coherent operating journey: contract review, merchant decisioning, transaction analytics, and post-transaction settlement.
+The four core workflow products cover a coherent operating journey: contract review, merchant decisioning, transaction analytics, and post-transaction settlement. MerchVault adds the merchant-operations control plane, while GraphLens demonstrates network-level payment analysis.
 
 ## Architecture at a glance
 
@@ -41,6 +43,8 @@ The products are independent applications, but together they cover a coherent op
 | Sentinel | Python, FastAPI, XGBoost, SHAP, React | Static Vercel demo with deterministic fallback | Training pipeline, real-time scoring API, SQLite logging, Docker, and model artifacts |
 | PayCommander | Python, FastAPI, Streamlit, SQLite | Static deterministic Vercel demo | Six-agent pipeline, 100K-row mock warehouse, API, audit trail, and MIS reporting |
 | SettleIQ | Python, Streamlit, SQLite | Static Vercel portfolio application | Six-agent orchestration, seven payment skills, generated settlement data, and local dashboard |
+| MerchVault | Next.js, TypeScript, Tailwind | Vercel application | Merchant compliance, risk, document, audit, and support workflows |
+| GraphLens / OpenCMS Payments | Svelte, Vite, FastAPI, graph analytics | Static Vercel frontend | Python API, temporal graph construction, anomaly analysis, and processed public data |
 
 ## Repository structure
 
@@ -49,6 +53,8 @@ fintech-ai-product-suite/
 ├── .github/workflows/ci.yml
 ├── clauseguard/
 ├── merchant-risk-scoring/
+├── merchvault/
+├── open-cms-payments/
 ├── paycommander/
 ├── settleiq/
 └── README.md
@@ -83,6 +89,16 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run dashboard/app.py
+
+# MerchVault
+cd merchvault
+npm ci
+npm run dev
+
+# GraphLens / OpenCMS Payments frontend
+cd open-cms-payments/frontend
+npm ci
+npm run dev
 ```
 
 ## Data, safety, and limitations
@@ -101,7 +117,9 @@ The root workflow validates:
 - Sentinel frontend build and Python tests
 - PayCommander Python tests
 - SettleIQ data generation, end-to-end demo execution, and Python compilation
+- MerchVault production build
+- GraphLens / OpenCMS Payments frontend build
 
 ## Repository scope
 
-This public repository contains the code and technical documentation for these four related fintech applications. The private `Portfolio` repository remains the canonical home for cross-project descriptions, comparisons, interview positioning, and the complete project catalog.
+This public repository contains the code and technical documentation for these six related fintech applications. The private `Portfolio` repository remains the canonical home for cross-project descriptions, comparisons, interview positioning, and the complete project catalog.

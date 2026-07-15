@@ -1,0 +1,17 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M30 4 L54 17.5 L54 42.5 L30 56 L6 42.5 L6 17.5 Z" stroke="#00c8ff" stroke-width="1.2" fill="rgba(0,200,255,0.05)"/>
+	<path d="M30 15 L44 22.5 L44 37.5 L30 45 L16 37.5 L16 22.5 Z" stroke="#00c8ff" stroke-width="0.8" fill="rgba(0,200,255,0.08)" opacity="0.7"/>
+	<circle cx="30" cy="30" r="5.5" fill="#00c8ff" opacity="0.95"/>
+	<circle cx="30" cy="15" r="2.2" fill="#00c8ff" opacity="0.7"/>
+	<circle cx="44" cy="22.5" r="2.2" fill="#f28e2b" opacity="0.7"/>
+	<circle cx="44" cy="37.5" r="2.2" fill="#22d3a5" opacity="0.7"/>
+	<circle cx="30" cy="45" r="2.2" fill="#00c8ff" opacity="0.7"/>
+	<circle cx="16" cy="37.5" r="2.2" fill="#e15759" opacity="0.7"/>
+	<circle cx="16" cy="22.5" r="2.2" fill="#8b5cf6" opacity="0.7"/>
+	<line x1="30" y1="24.5" x2="30" y2="15" stroke="#00c8ff" stroke-width="0.7" opacity="0.4"/>
+	<line x1="30" y1="24.5" x2="44" y2="22.5" stroke="#f28e2b" stroke-width="0.7" opacity="0.4"/>
+	<line x1="30" y1="35.5" x2="44" y2="37.5" stroke="#22d3a5" stroke-width="0.7" opacity="0.4"/>
+	<line x1="30" y1="35.5" x2="30" y2="45" stroke="#00c8ff" stroke-width="0.7" opacity="0.4"/>
+	<line x1="30" y1="35.5" x2="16" y2="37.5" stroke="#e15759" stroke-width="0.7" opacity="0.4"/>
+	<line x1="30" y1="24.5" x2="16" y2="22.5" stroke="#8b5cf6" stroke-width="0.7" opacity="0.4"/>
+</svg>
