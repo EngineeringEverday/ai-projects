@@ -13,6 +13,8 @@ jobs:
         project:
           - clauseguard
           - merchant-risk-scoring/frontend
+          - merchvault
+          - open-cms-payments/frontend
     defaults:
       run:
         working-directory: ${{ matrix.project }}
